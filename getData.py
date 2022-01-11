@@ -12,7 +12,7 @@ KEY = '464378587a72656131303254716d5443'
 TYPE = 'json'
 SERVICE = 'bikeList'
 START_INDEX = '1'
-END_INDEX = '100'
+END_INDEX = '3'
 
 '''
 rackTotCnt : 거치대 개수
