@@ -6,23 +6,23 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>자전거 대여 페이지</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="static/css/styles.css" rel="stylesheet" />
 
         <!-- 여기서부턴 map페이지 -->
         <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    
+
         <script>
             L_NO_TOUCH = false;
             L_DISABLE_3D = false;
         </script>
-    
+
         <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
         <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
         <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
@@ -32,7 +32,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
-        
+
                 <meta name="viewport" content="width=device-width,
                     initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
                 <style>
@@ -44,7 +44,7 @@
                         top: 0.0%;
                     }
                 </style>
-            
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
@@ -70,7 +70,7 @@
             </div>
         </nav>
         <!-- Page Header-->
-        <header class="masthead" style="background-image: url('assets/img/about-bg.jpg')">
+        <header class="masthead" style="background-image: url('static/assets/img/about-bg.jpg')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
@@ -83,9 +83,9 @@
             </div>
         </header>
         <!-- Main Content-->
-            
+
         <div class="folium-map" id="map_09881faa94d943e991813ecbfa161fe4" ></div>
-        <script>    
+        <script>
 
             var map_09881faa94d943e991813ecbfa161fe4 = L.map(
                 "map_09881faa94d943e991813ecbfa161fe4",
@@ -99,97 +99,97 @@
             );
             L.control.scale().addTo(map_09881faa94d943e991813ecbfa161fe4);
 
-            
 
-        
-    
+
+
+
             var tile_layer_c006037ea25543c6aa05b877a6c3525f = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
             ).addTo(map_09881faa94d943e991813ecbfa161fe4);
-        
-    
+
+
             var marker_cluster_975decc997fe402c82d37263efb71d48 = L.markerClusterGroup(
                 {}
             );
             map_09881faa94d943e991813ecbfa161fe4.addLayer(marker_cluster_975decc997fe402c82d37263efb71d48);
-        
-    
+
+
             var marker_6683aa85391343c6aff23fabbee97243 = L.marker(
                 [37.5556488, 126.91062927],
                 {}
             ).addTo(marker_cluster_975decc997fe402c82d37263efb71d48);
-        
-    
+
+
         var popup_d491c3961d154c90bd91b03673fc20d8 = L.popup({"maxWidth": 200});
 
-        
+
             var html_36f358851e024f3db61be9d24c7e4596 = $(`<div id="html_36f358851e024f3db61be9d24c7e4596" style="width: 100.0%; height: 100.0%;">망원역 1번출구 앞</div>`)[0];
             popup_d491c3961d154c90bd91b03673fc20d8.setContent(html_36f358851e024f3db61be9d24c7e4596);
-        
+
 
         marker_6683aa85391343c6aff23fabbee97243.bindPopup(popup_d491c3961d154c90bd91b03673fc20d8)
         ;
 
-        
-    
-    
+
+
+
             var marker_aa9ff389441a44e7b00673d9dd559667 = L.marker(
                 [37.55495071, 126.91083527],
                 {}
             ).addTo(marker_cluster_975decc997fe402c82d37263efb71d48);
-        
-    
+
+
         var popup_73a379c39a364800a3a0df64e7a49906 = L.popup({"maxWidth": 200});
 
-        
+
             var html_fd48999f5fe64b9e9629597f2bf8bd5b = $(`<div id="html_fd48999f5fe64b9e9629597f2bf8bd5b" style="width: 100.0%; height: 100.0%;">망원역 2번출구 앞</div>`)[0];
             popup_73a379c39a364800a3a0df64e7a49906.setContent(html_fd48999f5fe64b9e9629597f2bf8bd5b);
-        
+
 
         marker_aa9ff389441a44e7b00673d9dd559667.bindPopup(popup_73a379c39a364800a3a0df64e7a49906)
         ;
 
-        
-    
-    
+
+
+
             var marker_83c7f157f114453e9cb6226eff00d61a = L.marker(
                 [37.55062866, 126.91498566],
                 {}
             ).addTo(marker_cluster_975decc997fe402c82d37263efb71d48);
-        
-    
+
+
         var popup_8f40a4ecc0574df891fccdd746585f00 = L.popup({"maxWidth": 200});
 
-        
+
             var html_4ba04ea9e3214a7e84d903d83b15b04b = $(`<div id="html_4ba04ea9e3214a7e84d903d83b15b04b" style="width: 100.0%; height: 100.0%;">합정역 1번출구 앞</div>`)[0];
             popup_8f40a4ecc0574df891fccdd746585f00.setContent(html_4ba04ea9e3214a7e84d903d83b15b04b);
-        
+
 
         marker_83c7f157f114453e9cb6226eff00d61a.bindPopup(popup_8f40a4ecc0574df891fccdd746585f00)
         ;
 
-        
-    
-    
+
+
+
             var marker_c137ae20d8734278ac47987662c63e15 = L.marker(
                 [37.55839516099873, 126.84957419431153],
                 {}
             ).addTo(marker_cluster_975decc997fe402c82d37263efb71d48);
-        
-    
+
+
         var popup_a0f2b951a91c44dcaf0bda7ebe43b5bb = L.popup({"maxWidth": 200});
 
-        
+
             var html_93b6cc671eab409495eb20933900a3f3 = $(`<div id="html_93b6cc671eab409495eb20933900a3f3" style="width: 100.0%; height: 100.0%;">강서구청</div>`)[0];
             popup_a0f2b951a91c44dcaf0bda7ebe43b5bb.setContent(html_93b6cc671eab409495eb20933900a3f3);
-        
+
 
         marker_c137ae20d8734278ac47987662c63e15.bindPopup(popup_a0f2b951a91c44dcaf0bda7ebe43b5bb)
         ;
 
-        
-    
+
+
 </script>
         <main class="mb-4">
             <div class="container px-4 px-lg-5">
@@ -241,6 +241,6 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="static/js/scripts.js"></script>
     </body>
 </html>
