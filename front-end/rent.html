@@ -14,25 +14,76 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="static/css/styles.css" rel="stylesheet" />
-        <style>
-          #map-wrapper {
-            position: relative;
-            padding-top: 5%;
-            padding-bottom: 40%;
-            justify-content: center;
-          }
-          #map {
-            position:  absolute;
-            width: 80%;
-            height: 80%;
-            margin-left: 10%;
-            margin-right: 10%;
-          }
-        </style>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
 
+        <!-- 여기서부턴 map페이지 -->
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map-wrapper {
+                  position: relative;
+                  padding-top: 5%;
+                  padding-bottom: 40%;
+                  justify-content: center;
+                }
+                #map {
+                  position:  absolute;
+                  width: 80%;
+                  height: 80%;
+                  margin-left: 10%;
+                  margin-right: 10%;
+                }
+
+                .popup {
+                    position: absolute; left: 50%; top: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 5;
+                    width: 500px;
+                    height: 500px;
+                    box-shadow: 2px 2px 10px
+                    rgba(0,0,0,0.5);
+                    border-radius: 5px;
+                    text-align: right;
+                    padding: 20px;
+                    box-sizing: border-box;
+                    background: #fff;
+                    opacity: 0;
+                    transition: all 0.5s;
+                }
+                .popup a{
+                    color : gray; text-decoration: none;
+                }
+
+                .popup:target{
+                    opacity: 1;
+                }
+
+                .popup:target + .dim{
+                    opacity: 1;
+                    z-index: 2;
+                }
+
+            </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
     </head>
     <body>
         <!-- Navigation-->
@@ -59,24 +110,61 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="page-heading">
-                            <h1>자전거 대여 페이지</h1>
-                            <span class="subheading">자전거를 대여해보세요</span>
+                            <h1>자전거 대여하기</h1>
+                            <span class="subheading">지금바로 자전거를 대여해보세요</span>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
         <!-- Main Content-->
-        <div id="map-wrapper">
-          <iframe id="map" src="map.html"></iframe>
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+
+                    <div class="page-heading">
+                        <center>
+                        <h1>장소 선택</h1>
+                        <span class="subheading">대여하실 장소를 선택하세요</span>
+                        </center>
+                    </div>
+            </div>
+
         </div>
+    </br>
+    </br>
+
+<!-- here goes map -->
+  <div id=map-wrapper>
+    <iframe id="map" src="map.html"></iframe>
+  </div>
         <main class="mb-4">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in officia voluptas voluptatibus, minus!</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi aliquid ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque sit tempora!</p>
+                        <p><div class="d-flex justify-content-center"><a class="btn btn-primary text-uppercase" href="#pop1">자전거 대여하기</a></div></p>
+                        <div class="popup" id="pop1">
+                            <a href="#a">닫기</a>
+                            </br>
+                            </br>
+                            <div class="form-floating">
+                                <center>시작 대여장소 입력</center>
+                                <input class="form-control" type="text">
+                            </br>
+                            </br>
+                                <center>도착 반납장소 입력</center>
+                                <input class="form-control" type="text">
+                                </br>
+                                </br>
+                                <div class="d-flex justify-content-center">
+                                    <button class="btn btn-primary" onclick="rent()">대여하기</button>
+                                    <script>
+                                        function rent() {
+                                          alert("대여가 완료되었습니다.");
+                                          window.location.href = "rent.html";
+                                        }
+                                        </script>
+                                </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -112,7 +200,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2021</div>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; vennis 2022</div>
                     </div>
                 </div>
             </div>
