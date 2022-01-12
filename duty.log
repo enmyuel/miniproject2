@@ -1,6 +1,6 @@
-[{"rackTotCnt": "22", "stationName": "102. 망원역 1번출구 앞", "parkingBikeTotCnt": "27", "shared": "123", "stationLatitude": "37.55564880", "stationLongitude": "126.91062927", "stationId": "ST-4"}, {"rackTotCnt": "16", "stationName": "103. 망원역 2번출구 앞", "parkingBikeTotCnt": "16", "shared": "100", "stationLatitude": "37.55495071", "stationLongitude": "126.91083527", "stationId": "ST-5"}, {"rackTotCnt": "15", "stationName": "104. 합정역 1번출구 앞", "parkingBikeTotCnt": "11", "shared": "73", "stationLatitude": "37.55062866", "stationLongitude": "126.91498566", "stationId": "ST-6"}]MongoDB shell version v5.0.5
+[{"rackTotCnt": "22", "stationName": "102. 망원역 1번출구 앞", "parkingBikeTotCnt": "28", "shared": "127", "stationLatitude": "37.55564880", "stationLongitude": "126.91062927", "stationId": "ST-4"}, {"rackTotCnt": "16", "stationName": "103. 망원역 2번출구 앞", "parkingBikeTotCnt": "19", "shared": "119", "stationLatitude": "37.55495071", "stationLongitude": "126.91083527", "stationId": "ST-5"}, {"rackTotCnt": "15", "stationName": "104. 합정역 1번출구 앞", "parkingBikeTotCnt": "9", "shared": "60", "stationLatitude": "37.55062866", "stationLongitude": "126.91498566", "stationId": "ST-6"}]MongoDB shell version v5.0.5
 connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
-Implicit session: session { "id" : UUID("772216fb-e7ca-46d4-a3ab-e8c8cead5cdf") }
+Implicit session: session { "id" : UUID("35ff3870-7844-4bb4-a71a-3fd8c8b48c4b") }
 MongoDB server version: 5.0.5
 ================
 Warning: the "mongo" shell has been superseded by "mongosh",
@@ -10,8 +10,8 @@ For installation instructions, see
 https://docs.mongodb.com/mongodb-shell/install/
 ================
 switched to db station
-{ "_id" : ObjectId("61de2236ad4e6b04b34f8cae"), "rackTotCnt" : "22", "stationName" : "102. 망원역 1번출구 앞", "parkingBikeTotCnt" : "27", "shared" : "123", "stationLatitude" : "37.55564880", "stationLongitude" : "126.91062927", "stationId" : "ST-4" }
-{ "_id" : ObjectId("61de2236ad4e6b04b34f8caf"), "rackTotCnt" : "16", "stationName" : "103. 망원역 2번출구 앞", "parkingBikeTotCnt" : "16", "shared" : "100", "stationLatitude" : "37.55495071", "stationLongitude" : "126.91083527", "stationId" : "ST-5" }
-{ "_id" : ObjectId("61de2236ad4e6b04b34f8cb0"), "rackTotCnt" : "15", "stationName" : "104. 합정역 1번출구 앞", "parkingBikeTotCnt" : "11", "shared" : "73", "stationLatitude" : "37.55062866", "stationLongitude" : "126.91498566", "stationId" : "ST-6" }
+{ "_id" : ObjectId("61de3226ec6b6b1ac1b78bdc"), "rackTotCnt" : "22", "stationName" : "102. 망원역 1번출구 앞", "parkingBikeTotCnt" : "28", "shared" : "127", "stationLatitude" : "37.55564880", "stationLongitude" : "126.91062927", "stationId" : "ST-4" }
+{ "_id" : ObjectId("61de3226ec6b6b1ac1b78bdd"), "rackTotCnt" : "16", "stationName" : "103. 망원역 2번출구 앞", "parkingBikeTotCnt" : "19", "shared" : "119", "stationLatitude" : "37.55495071", "stationLongitude" : "126.91083527", "stationId" : "ST-5" }
+{ "_id" : ObjectId("61de3226ec6b6b1ac1b78bde"), "rackTotCnt" : "15", "stationName" : "104. 합정역 1번출구 앞", "parkingBikeTotCnt" : "9", "shared" : "60", "stationLatitude" : "37.55062866", "stationLongitude" : "126.91498566", "stationId" : "ST-6" }
 3
 bye
