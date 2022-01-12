@@ -2,7 +2,7 @@ from bottle import route, run, static_file
 
 @route('/hello')
 def hello():
-    return "Hello World!"
+    return "Hello World!3123"
 
 @route('/front-end/<filename>')
 def index(filename):
@@ -20,4 +20,4 @@ def send_js(filename):
 def send_img(filepath):
     return static_file(filepath, root='/data/project/front-end/static/assets')
 
-run(host='0.0.0.0', port=8080, debug=True)
+run(host='0.0.0.0', port=8080, debug=True, reloader=True)
