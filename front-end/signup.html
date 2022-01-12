@@ -61,48 +61,11 @@
                             <!-- To make this form functional, sign up at-->
                             <!-- https://startbootstrap.com/solution/contact-forms-->
                             <!-- to get an API token!-->
-                            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                                <div class="form-floating">
-                                    <input class="form-control" id="user_ID" type="text" placeholder="Enter your ID..." />
-                                    <label for="id">ID</label>
-                                    <div class="invalid-feedback" data-sb-feedback="id:required">A id is required.</div>
-                                </div>
-                                <div class="form-floating">
-                                    <input class="form-control" id="password" type="password" placeholder="Enter your password..." />
-                                    <label for="password">Password</label>
-                                    <div class="invalid-feedback" data-sb-feedback="password:required">An password is required.</div>
-                                    <div class="invalid-feedback" data-sb-feedback="password:password">password is not valid.</div>
-                                </div>
-                                <div class="form-floating">
-                                    <input class="form-control" id="password check" type="password" placeholder="Enter your password check..." />
-                                    <label for="password check">Password Check</label>
-                                    <div class="invalid-feedback" data-sb-feedback="password check:required">A password check is required.</div>
-                                </div>
-                                <div class="form-floating">
-                                    <input class="form-control" id="name" placeholder="Enter your name..." ></input>
-                                    <label for="name">Name</label>
-                                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                                </div>
-                                <br />
-                                <!-- Submit success name-->
-                                <!---->
-                                <!-- This is what your users will see when the form-->
-                                <!-- has successfully submitted-->
-                                <div class="d-none" id="submitSuccessMessage">
-                                    <div class="text-center mb-3">
-                                        <div class="fw-bolder">Form submission successful!</div>
-                                        To activate this form, sign up at
-                                        <br />
-                                        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                    </div>
-                                </div>
-                                <!-- Submit error message-->
-                                <!---->
-                                <!-- This is what your users will see when there is-->
-                                <!-- an error submitting the form-->
-                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                                <!-- Submit Button-->
-                             <button class="btn btn-primary text-uppercase disabled" id="submitButton" type="submit">sign up</button>
+                            <form id="signup" name="sign-up" action="signup.html" method="post">
+                              이름 : <input type="text" id="name" name="name"/> <br/>
+                              아이디 : <input type="text" id="id" name="id"/> <br/>
+                              비밀번호 : <input type="password" id="password" name="password"/> <br/>
+                              <button type="submit">회원 가입</button>
                             </form>
                         </div>
                     </div>
