@@ -12,11 +12,11 @@ data = {'망원역 1번출구 앞':[37.55564880, 126.91062927],
         '합정역 5번출구 앞':[37.55000687, 126.91482544],
    }
 
-map1 = folium.Map(location =[37.566535, 126.9779691999996], 
+map1 = folium.Map(location =[37.566535, 126.9779691999996],
        zoom_start = 10,
        zoom_control = False,
-       control_scale = True, 
-       tiles = 'OpenStreetMap') 
+       control_scale = True,
+       tiles = 'OpenStreetMap')
 map1
 
 # MarkerCluster 불러오기
@@ -25,11 +25,9 @@ marker_cluster = MarkerCluster().add_to(map1)
 
 # 각각의 Marker을 MarkerCluster에 추가.
 for msg, loc in data.items():
- # print(msg, loc)
+ #print(msg, loc)
  folium.Marker(location= loc, popup = folium.Popup(msg, max_width = 200)).add_to(marker_cluster)
  map1
 
 
 map1.save('map.html')
-
- 
