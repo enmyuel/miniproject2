@@ -24,12 +24,14 @@ def login():
     id = request.forms.get("id")
     password = request.forms.get("password")
 
+    user = db.member.find_one({'id':id, 'password':password})
+    print("id = " + id, "password = " + password)
 
-    a = db.member.find_one({'id':id, 'password':password})
-    if a != None:
-        print("welcome! "+ a['name'])
+    if user != None:
+        print("welcome! "+ user['name'])
     else:
         print("authentication failed")
+
     client.close()
     return static_file("signup.html", root='/data/project/front-end')
 
@@ -46,8 +48,7 @@ def signup():
     client = MongoClient(host='localhost', port=27017)
     db = client.member
     db.member.insert_one(data)
-    ## a = db.member.find_one({'id':'1111', 'password':'2222'})
-    # db.member.delete_one({'name':'abcd'})
+    # a = db.member.find_one({'id':'1111', 'password':'2222'})
     client.close()
     return static_file("signup.html", root='/data/project/front-end')
 
