@@ -1,4 +1,4 @@
-from bottle import route, run, request, static_file
+from bottle import route, run, request, static_file, redirect, template
 from pymongo import MongoClient
 import sys, os
 sys.path.append("/data/project/front-end")
@@ -27,13 +27,14 @@ def login():
     user = db.member.find_one({'id':id, 'password':password})
     print("id = " + id, "password = " + password)
 
+    client.close()
+
     if user != None:
         print("welcome! "+ user['name'])
+        return "<script>alert('로그인에 성공하였습니다'); window.location.href='index.html';</script>"
     else:
         print("authentication failed")
-
-    client.close()
-    return static_file("signup.html", root='/data/project/front-end')
+        return "<script>alert('다시 시도해주세요'); window.location.href='login.html';</script>"
 
 # 회원가입 처리
 @route('/front-end/signup.html', method='POST')
@@ -65,4 +66,4 @@ def send_js(filename):
 def send_img(filepath):
     return static_file(filepath, root='/data/project/front-end/static/assets')
 
-run(host='0.0.0.0', port=8080, debug=True, reloader=True)
+run(host='0.0.0.0', port=80, debug=True, reloader=True)

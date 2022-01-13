@@ -39,14 +39,9 @@
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        <div class="post-heading">
-                            <h1>Man must explore, and this is exploration at its greatest</h1>
-                            <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
-                            <span class="meta">
-                                Posted by
-                                <a href="#!">Start Bootstrap</a>
-                                on August 24, 2021
-                            </span>
+                        <div class="page-heading">
+                            <h1>로그인</h1>
+                            <span class="subheading">아이디와 비밀번호를 입력해주세요</span>
                         </div>
                     </div>
                 </div>
@@ -57,14 +52,60 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
                         <form id="login" name="login" action="login.html" method="post">
-                            아이디 : <input type="text" id="id" name="id" /><br/>
-                            비밀번호 : <input type="password" id="password" name="password" /><br/>
-                            <button type="submit">로그인</button><br/>
+                            <div class="form-floating">
+                                <input class="form-control" type="text" id="id" name="id"/>
+                                <label for="id">ID</label>
+                            </div>
+                            <br/>
+                            <div class="form-floating">
+                                <input class="form-control" type="password" id="password" name="password"/>
+                                <label for="id">Password</label>
+                            </div>
+                            <br/>
+                            <div class="d-flex justify-content-center">
+                            <button class="btn btn-primary text-uppercase" type="submit">로그인</button>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
+        </main>
+                <!-- Footer-->
+                <footer class="border-top">
+                    <div class="container px-4 px-lg-5">
+                        <div class="row gx-4 gx-lg-5 justify-content-center">
+                            <div class="col-md-10 col-lg-8 col-xl-7">
+                                <ul class="list-inline text-center">
+                                    <li class="list-inline-item">
+                                        <a href="#!">
+                                            <span class="fa-stack fa-lg">
+                                                <i class="fas fa-circle fa-stack-2x"></i>
+                                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#!">
+                                            <span class="fa-stack fa-lg">
+                                                <i class="fas fa-circle fa-stack-2x"></i>
+                                                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#!">
+                                            <span class="fa-stack fa-lg">
+                                                <i class="fas fa-circle fa-stack-2x"></i>
+                                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="small text-center text-muted fst-italic">Copyright © vennis 2022</div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
     </body>
 </html>
