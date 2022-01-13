@@ -1,20 +1,42 @@
 from bottle import route, run, request, static_file
 from pymongo import MongoClient
+import sys, os
+sys.path.append("/data/project/front-end")
+import map
 
-@route('/front-end/<filename>', method='GET')
+@route('/front-end/<filename>')
 def index(filename):
-    print("GET")
     return static_file(filename, root='/data/project/front-end')
 
-@route('/front-end/signup.html')
-def test():
-    print("hello")
+
+@route('/front-end/rent.html')
+def rent():
+    map.getMap()
+    return static_file("rent.html", root='/data/project/front-end')
+
+
+# 로그인 처리
+@route('/front-end/login.html', method='POST')
+def login():
+    client = MongoClient(host='localhost', port=27017)
+    db = client.member
+
+    id = request.forms.get("id")
+    password = request.forms.get("password")
+
+
+    a = db.member.find_one({'id':id, 'password':password})
+    if a != None:
+        print("welcome! "+ a['name'])
+    else:
+        print("authentication failed")
+    client.close()
     return static_file("signup.html", root='/data/project/front-end')
 
 # 회원가입 처리
 @route('/front-end/signup.html', method='POST')
-def post_test():
-    print("hello post")
+def signup():
+
     name = request.forms.get("name")
     id = request.forms.get("id")
     password = request.forms.get("password")
@@ -22,15 +44,11 @@ def post_test():
     data = {"name":name, "id":id, "password":password}
 
     client = MongoClient(host='localhost', port=27017)
-
     db = client.member
     db.member.insert_one(data)
+    ## a = db.member.find_one({'id':'1111', 'password':'2222'})
     # db.member.delete_one({'name':'abcd'})
-    # user = db.member.find_one({'name' : 'abcd'})
-    # print(user)
-    #db = client.station
-    #user = db.data.find_one({'rackTotCnt':'22'})
-
+    client.close()
     return static_file("signup.html", root='/data/project/front-end')
 
 
